@@ -1,0 +1,1452 @@
+
+
+* {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box; 
+    text-decoration: none;
+    border:none; 
+    outline:none; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+
+:root {
+   
+ --bg-color: #00274d; /* Bleu foncé */
+ --second-bg-color: #003366; /* Bleu intermédiaire */
+ --main-color: #1e90ff; /* Bleu vif */
+--text-color: #e0f7ff; /* Bleu très clair pour le texte */
+}
+
+    
+
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+
+}
+
+body{
+   
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+background: var(--bg-color);
+color: var(--text-color);
+margin: 0;
+padding-top: 4rem;
+
+}
+
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+
+}
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 100;
+    cursor: pointer;
+    
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.logo span{
+    text-shadow: 0 0 25px var(var(--main-color));
+}
+.navbar a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    text-shadow: 0 0 25px var(--main-color); 
+}
+
+.navbar {
+        position: relative; /* S'assure qu'elle reste visible */
+        cursor: pointer; 
+ }
+
+
+ section{
+    width: 100%; 
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+   
+}
+
+.Home {
+    display: flex;
+    align-items: center; /* Centre verticalement l'image et le texte */
+    justify-content: space-between; /* Sépare le texte et l'image */
+    gap: 5rem; /* Ajoute de l'espace entre le texte et l'image */
+    flex-wrap: wrap; /* S'assure que les éléments s'empilent si la largeur est réduite */
+}
+
+
+.Home-content {
+    flex: 1; /* Le texte prend tout l'espace disponible */
+    max-width: 60%; /* Ajuste la largeur du texte */
+}
+
+/* Titre principal */
+.Home-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.Home-content h1 span {
+    color:rgb(170, 220, 253); /* Texte en bleu */
+}
+
+
+
+.Home-content .text-animate h3:hover {
+    color: var(--main-color); /* Couleur bleue au survol */
+}
+
+
+.Home-content .text-animate h3 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 0.7px var(--main-color);/* ajoute une bordure extérieure (ou contour)*/
+    position: relative;
+    display: inline-block;
+    animation: textSlide 12s infinite; /* Associe l'animation */
+}
+@keyframes textSlide {
+    0% {
+        transform: translateX(-100%); /* Commence à gauche */
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0); /* Position centrale */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%); /* Sort vers la droite */
+        opacity: 0;
+    }
+}
+
+.home-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.home-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    font-size: 1.9rem;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.home-social a:hover {
+    background: var(--main-color);
+    color: #000;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+
+.home-img {
+    position: absolute; /* Permet un positionnement précis */
+    top: 170px; /* Positionne l'image avec un espacement de 150px sous la navbar (ajustez selon votre navbar) */
+    right: 20px; /* Place l'image à droite */
+    width: 40%; /* La largeur de l'image est fixée à 40% du conteneur parent */
+    height: auto; /* Adapte la hauteur selon le contenu */
+    background: transparent;
+    display: flex;
+    justify-content: center; 
+}
+
+.home-img img {
+    border-radius: 50%; /* Rond */
+    width: 80vw; /* Largeur relative à la fenêtre */
+    max-width: 450px; /* Limite maximale */
+    min-width: 260px; /* Limite minimale */
+    box-shadow: 0 0 30px var(--main-color); /* Effet d'ombre */
+    cursor: pointer; /* Curseur pour montrer qu'elle est interactive */
+    transition: 0.4s ease-in-out; /* Transition fluide  Effet de vitesse : lent au début et à la fin, rapide au milieu.*/
+}
+
+.home-img img:hover {
+    transform: scale(1.1); /* Agrandit l'image de 20% */
+    box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color); /* Ombre accentuée */
+}
+
+
+.Home-content P{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.9;
+    max-width: 1000px;
+    text-align: justify;
+    margin: 2rem 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.about{
+    display:flex;/*permet de contrôler la disposition des éléments enfants (alignement, direction, espacement, etc.) de manière flexible et dynamique.*/
+    align-items: center;
+    flex-direction: column;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+    
+.heading{
+    font-size: 5rem;    
+    margin-bottom:3rem ;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #faf8f8;
+}
+span{
+    color:var(--main-color) ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.about-img {
+    position: relative;/*positionner l'élément par rapport à sa position normal*/
+    width: 25rem; /* Taille du conteneur */
+    height: 25rem;
+    top: 0;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background: rgb(3, 3, 3); 
+    box-shadow: 0 0 20px var(--main-color); 
+   
+}
+/* Image ronde */
+ img {
+    width: 90%; 
+    height: 90%;
+    object-fit: cover; /* l'image remplir un conteneur sans déformation, mais elle peut couper certaines parties de l'image si nécessaire.*/
+    border-radius: 50%; 
+    border: 0.2rem solid var(--main-color);
+}
+
+/* Animation circulaire */
+.about-img .circle-spin {
+    position: absolute;/*permet de positionner un élément de manière très précise par rapport à son parent*/
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    border: 0.2rem solid transparent; /* Bordure transparente */
+    border-top: 0.2rem solid var(--main-color); /* Couleur du bord animé */
+    animation: spin 3s linear infinite; /* Animation infinie */
+    background: transparent; /* Assure un fond transparent */
+}
+
+/* Animation rotation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Départ */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotation complète */
+    }
+}
+
+.about .content {
+    text-align: center; /* Centrer tout le contenu */
+    margin: 0 auto;
+    max-width: 800px; /* Limite la largeur pour un meilleur rendu */
+    padding: 2rem 1rem; /* Ajoute un espacement interne */
+}
+
+.about .content h3 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(129, 203, 252);
+}
+
+.about .content p {
+    font-size: 1.6rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+    color: #f2f2f2;
+}
+
+/* Conteneur principal pour les informations de contact */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Autorise le retour à la ligne sur petits écrans */
+    gap: 2rem; /* Ajoute un espacement entre les items */
+    padding: 2rem 0;
+}
+
+/* Style des éléments de contact */
+.contact-item {
+    background: var(--second-bg-color);
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 280px; /* Taille fixe pour un rendu uniforme */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* Icônes dans les éléments de contact */
+.contact-item i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+/* Texte dans les éléments de contact */
+.contact-item p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    word-wrap: break-word; /* Permet de gérer les longues chaînes */
+}
+
+.contact-item:hover i {
+    color: #d7e60a; 
+}
+
+.contact-item:hover p {
+    color: #d7e60a; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about .content h3 {
+        font-size: 2.5rem;
+    }
+
+    .about .content p {
+        font-size: 1.4rem;
+    }
+
+    .contact-item {
+        width: 100%; /* S'étend sur toute la largeur de l'écran */
+        max-width: 300px;
+    }
+
+    .contact-info {
+        gap: 1.5rem; /* Réduit l'espace entre les items */
+    }
+}
+
+@media (max-width: 480px) {
+    .about .content h3 {
+        font-size: 2rem;
+    }
+
+    .about .content p {
+        font-size: 1.2rem;
+    }
+
+    .contact-item {
+        padding: 1.5rem;
+    }
+
+    .contact-item i {
+        font-size: 2rem;
+    }
+
+    .contact-item p {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+  }
+  
+  .education .heading {
+  
+    margin-bottom: 2rem;
+    text-align: center;
+    color: rgb(252, 249, 249);
+  }
+
+  .education-column .title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .education-box.education-content {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .education-box.education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center the circle horizontally */
+    transform: translateX(-50%); /* Offset the circle horizontally */
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .education-content .content {
+    position: relative;
+    padding: 1.5rem;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+    
+  }
+  
+
+  .education-content .Year {
+    font-size: 1.7rem;
+    color: rgb(6, 123, 128);
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .education-content .Year i {
+    margin-right: 0.5rem;
+  }
+  
+  .education-content h3 {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+  }
+  
+  .education-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+
+
+
+
+
+
+ 
+
+/* Section Contact */
+.contact {
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%; /* Largeur pour afficher deux champs côte à côte */
+    margin: 0.8rem 0;
+}
+
+.contact form .input-box input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: 0.6rem;
+    border: 0.2rem solid var(--main-color);
+}
+
+/* Placeholder Styling */
+.contact form .input-box input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+/* Focus Effect */
+.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: 0.6rem;
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+}
+
+
+
+/* Champ Textarea */
+.contact form .textarea-field {
+    position: relative;
+    width: 100%;
+    margin: 0.8rem 0 2.7rem;
+}
+
+.contact form .textarea-field textarea {
+    resize: none; /* Empêche le redimensionnement */
+}
+
+/* Suppression des flèches pour les champs number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Style du bouton d'envoi */
+.contact form .btn-box {
+    margin-top: 2rem;
+}
+
+.contact form .btn-box .btn {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact form .btn-box .btn:hover {
+    background-color: rgb(13, 236, 199); /* Effet hover */
+}
+
+/* Styles d'erreur */
+.error {
+    border-color: red;
+    background-color: #ffdddd;
+}
+
+.error-message {
+    color: red;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+
+
+
+
+
+
+.skills{
+    background: var(--second-bg-color);
+}
+
+.skills-rows {
+    display: flex;
+    flex-wrap: wrap; /* Permet au contenu de se déplacer sur la ligne suivante si nécessaire */
+    gap: 20px; /* Espacement entre les éléments */
+   
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+   
+  
+}
+
+/* Chaque container de compétences */
+.skills-container {
+    border-radius: 10px; /* Coins arrondis */
+    border: 2px solid #38bdf8; /* Bordure bleue claire */
+    
+    position: relative;
+    transition: background 0.5s ease-in-out, border-color 0.5s ease-in-out; /* Transition fluide pour le cadre */
+    width: 100%; /* Adapte à la largeur du parent */
+    max-width: 300px; /* Augmente la largeur maximale pour agrandir les carrés */
+    height: auto; /* Ajuste automatiquement la hauteur selon le contenu */
+    padding: 20px; /* Augmente l'espace interne pour agrandir visuellement */
+    margin: 15px; /* Augmente l'espace entre les conteneurs */
+    cursor: pointer;
+}
+
+
+/* Effet hover sur le container de compétences */
+.skills-container:hover {
+    background: linear-gradient(
+        to right,
+        #926060, /* Rouge */
+        #fd850d, /* Orange */
+        #adad1c  /* Jaune */
+    );
+    background-size: 200% 100%; /* Étendre le dégradé à deux fois la largeur */
+    animation: slide-bg 3s ease-in-out infinite; /* Animation de translation */
+}
+
+/* Animation pour déplacer le dégradé de gauche à droite et retour */
+@keyframes slide-bg {
+    0% {
+        background-position: 100% 0%; /* Commence à la droite */
+    }
+    50% {
+        background-position: 0% 0%; /* Milieu : à gauche */
+    }
+    100% {
+        background-position: 100% 0%; /* Retour à droite */
+    }
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #e2e9ec;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.progress {
+    background-color: #374151;
+    border-radius: 20px;
+
+    height: 8px;
+    margin: 5px 0; 
+}
+
+.progress-bar {
+    background-color: #38bdf8;
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Effet hover supplémentaire (si besoin) */
+.skills-container:hover {
+    background-color:transparent; /* Couleur de fond rouge */
+    transition: background-color 0.3s ease-in-out; /* Transition fluide */
+}
+
+
+/*Utilisez px lorsque vous avez besoin d'une taille absolue et constante, comme pour des éléments de mise en page où la taille ne doit pas changer.
+Utilisez rem lorsque vous souhaitez que les éléments s'ajustent de manière flexible, en particulier pour les tailles de texte, pour rendre votre site plus accessible et adaptable.*/
+
+
+
+
+
+
+
+
+.certificat {
+    background: var(--second-bg-color); /* Fond sombre */
+   
+    
+}
+.certif-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);/*Cette règle crée une grille avec 3 colonnes, et chaque colonne prendra un tiers de la largeur totale de l'espace disponible.*/
+    align-items: center; /* Active Flexbox pour aligner les éléments */
+    
+    gap: 2.5rem; /* Espacement entre les éléments */
+}
+
+.certif-container .certif-box {
+   position:relative;
+   border-radius: 2rem;
+   box-shadow: 0 0 1rem var(--bg-color);
+   overflow: hidden;
+   display: flex;
+}
+
+.certif-box img {
+    width: 100%; /* L'image occupe toute la largeur de sa boîte */
+    height: auto; /* Maintient les proportions */
+    object-fit: cover; /* Ajuste l'image pour remplir la boîte */
+    border-radius: 15px; /* Coins arrondis */
+    transition: transform 0.5s ease;
+}
+
+
+/* Centrer la quatrième image uniquement */
+.certif-box.center-img {
+    display: flex;
+    justify-content: center; /* Centre l'élément horizontalement */
+    align-items: center;     /* Centre l'élément verticalement */
+}
+
+.certif-box.center-img img {
+    max-width: 80%; /* Limite la taille de l'image, vous pouvez ajuster */
+    object-fit: cover; /* Assurez-vous que l'image remplit bien l'espace */
+    border-radius: 15px; /* Coins arrondis, si nécessaire */
+}
+
+
+
+
+.certif-layer {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(rgba(2, 2, 2, 0.85),var(--main-color)) ; /* Couche sombre semi-transparente */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; /* Masque par défaut */
+    transition: opacity 0.5s ease;
+    padding: 2rem; 
+    cursor: pointer;
+}
+
+.certif-box:hover .certif-layer {
+    opacity: 1; /* Affiche la couche au survol */
+}
+
+.certif-layer h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #10e9f8; /* Couleur de l'accent pour les titres */
+}
+
+.certif-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ddd; /* Couleur douce pour le texte */
+}
+
+
+
+
+
+
+
+
+.exper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem; /* Ajoute un espacement entre les boîtes */
+    margin-top: 3rem;
+}
+
+
+.exper-container .exper-box {
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    border-radius: 2rem; /* Ajuste la courbure des coins */
+    text-align: center;
+    border: 0.5rem solid var(--bg-color); /* Bordure ajustée */
+    transition:.5s ease;
+
+}
+.exper-container .exper-box:hover{
+    border-color:var(--main-color) ;
+    transform: scale(1.02);
+}
+
+.exper-box i {
+    font-size: 1.6rem; /* Augmente la taille des icônes */
+    color: var(--main-color);
+    margin-bottom: 1rem; /* Ajoute de l'espace sous l'icône */
+}
+
+.exper-box h3 {
+    font-size: 2.4rem; /* Augmente la taille des titres */
+    color: rgb(32, 185, 206);
+    margin: 1rem 0;
+}
+strong{
+    color: #079cf8;
+}
+
+.exper-box p {
+    font-size: 2.2rem; /* Augmente la taille des paragraphes */
+    color: var(--text-color-light);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.experience {
+    background:var(--bg-color); /* Dégradé de couleurs moderne */
+ 
+}
+
+/* Style pour la section "My Studies" */
+.studies {
+    margin-bottom: 3rem;
+}
+
+/* Style pour la section "My Studies" */
+.studies h3 {
+    font-size: 3rem;
+    color: #00d1ff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+    
+.studies ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /*auto-fit fait en sorte que la grille ajuste le nombre de colonnes automatiquement en fonction de la taille de la fenêtre ou du conteneur parent.*/
+   /*: Crée des colonnes flexibles avec un minimum de 250px.*/
+    gap: 1.5rem;
+    
+}
+
+
+.studies ul li {
+    background-color: rgba(0, 0, 0, 0.4); /* Arrière-plan semi-transparent */
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre pour un effet moderne */
+    
+}
+
+.studies ul li:hover {
+    background-color: rgba(0, 209, 255, 0.8); /* Changement de couleur survol */
+    transform: translateY(-8px) rotate(-2deg); /* Effet de déplacement et légère rotation */
+    box-shadow: 0 8px 12px rgba(0, 209, 255, 0.4); /* Augmentation de l'ombre pour plus de profondeur */
+}
+
+
+/* Effet d'entrée en cascade pour les éléments */
+.studies ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.6s forwards ease-out;
+}
+
+
+/* Style pour la section "My Projects" */
+.projects table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: slideIn 1s ease-out;
+}
+
+.projects caption {
+    
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00d1ff;
+    margin-bottom: 2rem;
+}
+
+.projects th,
+.projects td {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projects th {
+    background: linear-gradient(90deg, #00d1ff, #005dff);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+    position: sticky;
+    top: 0;
+  
+}
+
+.projects tbody tr {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.projects tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.projects tbody tr:hover {
+    background-color: transparent;
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+}
+
+.projects td {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.projects td:first-child {
+    font-weight: bold;
+    color: #00d1ff;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .projects th, .projects td {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+
+    .projects caption {
+        font-size: 1.8rem;
+    }
+
+    .projects ol {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects table {
+        font-size: 1.2rem;
+    }
+
+    .projects th,
+    .projects td {
+        font-size: 1.2rem;
+    }
+
+    .projects caption {
+        font-size: 1.6rem;
+    }
+
+    .projects ol {
+        font-size: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {/*Cette animation fait apparaître un élément progressivement en ajustant son opacité et en déplaçant son position verticale.*/
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {/*Cette animation déplace un élément depuis la gauche tout en augmentant son opacité.*/
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color:#eef2f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Form Styles */
+.test {
+    font-size: 30px;
+    text-align: center;
+    color: #070707;
+    padding: 0;
+}
+h4{
+    color:#000;
+    font-size:large;
+}
+
+
+/* Style pour la section des questions */
+.question {
+    font-family: Arial, sans-serif; /* Police du texte */
+    font-size: 16px; /* Taille de la police */
+    color: #0c0b0b; /* Couleur du texte */
+    margin-bottom: 20px; /* Espace sous chaque question */
+    border: 1px solid #141414;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.question p {
+    font-weight: bold; /* Mettre la question en gras */
+    margin-bottom: 10px; /* Espacement entre la question et les options */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+}
+
+.question label {
+    display: block; /* Affiche chaque label sur une nouvelle ligne */
+    margin-bottom: 8px; /* Espacement entre les labels */
+    font-size: 14px; /* Taille de la police des options */
+}
+
+.question input[type="radio"] {
+    margin-right: 10px; /* Espace entre le bouton radio et le texte */
+}
+
+
+/* Style du bouton de soumission */
+#submit-btn {
+    background-color: #4caf9e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animation fluide pour les changements */
+}
+
+#submit-btn:hover {
+    background-color: #51d0f0; /* Couleur plus claire au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+}
+
+#submit-btn:active {
+    background-color: #1f81b9; /* Couleur encore plus foncée */
+    transform: scale(0.98); /* Réduction légère à l'appui */
+}
+
+#submit-btn:disabled {
+    background-color: #070707; /* Couleur pour l'état désactivé */
+    cursor: not-allowed; /* Indique que l'action n'est pas permise */
+    opacity: 0.6; /* Rendre le bouton désactivé un peu transparent */
+}
+
+/* Style pour la minuterie */
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #340de4;
+    margin-top: 10px;
+}
+
+
+
+/* Message d'encouragement ou félicitations */
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+}
+
+.red {
+    color: #f44336; /* Rouge vif pour tout le texte */
+}
+
+.green {
+    color: #4CAF50; /* Vert vif pour tout le texte */
+}
+
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+/* Centrer le conteneur principal pour les réponses incorrectes */
+.incorrect-answers {
+    background-color: #f9f9f9; /* Fond légèrement gris pour distinguer la section */
+    border: 1px solid #ddd; /* Bordure gris clair autour du conteneur */
+    padding: 15px;
+    margin: 20px auto; /* Centrer le conteneur avec une marge automatique */
+    border-radius: 8px; /* Coins arrondis pour un effet plus moderne */
+    width: 85%; /* Largeur du conteneur, ajustez selon vos préférences */
+    max-width: 600px; /* Largeur maximale pour ne pas trop élargir sur grands écrans */
+    text-align: left; /* Aligner le texte à gauche dans le conteneur */
+    justify-content: center;
+}
+
+/* Centrer le titre de la section des réponses correctes */
+.incorrect-answers strong {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Couleur sombre pour le titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    justify-content: center;
+}
+
+/* Style pour la liste des réponses incorrectes */
+.incorrect-answers ul {
+    list-style-type: none; /* Retirer les puces */
+    padding-left: 0; /* Enlever le retrait gauche de la liste */
+    margin: 0; /* Retirer la marge par défaut de la liste */
+    display: flex; /* Utiliser Flexbox pour les aligner horizontalement */
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur plusieurs lignes si nécessaire */
+    gap: 15px; /* Ajouter un espacement entre les éléments */
+}
+
+/* Style pour chaque élément de la liste */
+.incorrect-answers li {
+    font-size: 16px;
+    color: #333; /* Texte en gris foncé */
+    display: inline; /* Affichage en ligne pour chaque élément */
+}
+
+
+
+
+
+
+
+
+
+/* Conteneur titre et image */
+.title-container {
+    display: flex;
+    justify-content: space-between; /* Titre à gauche, logo à droite */
+    align-items: center; /* Aligne verticalement le titre et le logo */
+    margin-bottom: 2rem;
+    width: 100%; /* Assure que le conteneur occupe toute la largeur disponible */
+  
+}
+
+/* Titre */
+h1 {
+    font-size: 5rem;
+    color: #00d1ff;
+    margin: 0; /* Supprime les marges par défaut */
+    flex-grow: 1; /* Permet au titre de prendre toute la largeur restante */
+    text-align: center; /* Centre le texte */
+}
+
+/* Conteneur de l'image / Logo */
+.logo-container img {
+    width: 150px; /* Taille du logo */
+    height: auto;
+    border-radius: 50%; /* Rend le logo circulaire */
+}
+
+/* Conteneur de la vidéo */
+/* Conteneur de la vidéo */
+.video-container {
+    position: relative; /* Position relative pour les enfants positionnés */
+    width: 100%; /* Occupe toute la largeur */
+    max-width: 800px; /* Largeur maximale */
+    margin: 0 auto; /* Centre horizontalement */
+    border-radius: 10px; /* Coins arrondis */
+    aspect-ratio: 18/ 9; /* Ratio vidéo standard */
+
+    margin-bottom: 50px; /* Ajoute un espacement en bas entre la vidéo et le contenu en dessous */
+}
+
+
+/* Vidéo ou iframe */
+.video-container iframe {
+    position: absolute; /* Remplit tout le conteneur parent */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largeur complète */
+    height: 100%; /* Hauteur complète */
+    object-fit: cover; /* Ajuste sans déformer */
+    border: none; /* Supprime la bordure */
+}
+
+/* Conteneur principal */
+.iit-content {
+    display: flex;
+    justify-content: space-between; /* Espace entre les colonnes */
+    align-items: flex-start; /* Aligne en haut verticalement */
+    flex-wrap: wrap; /* Passe en colonne si l'espace est insuffisant */
+    gap: 2rem; /* Espacement entre les colonnes */
+    padding: 20px 30px;
+    color: #003366;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Partie gauche */
+.iit-left p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #f4f5f7;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.iit-left i {
+    margin-right: 8px; /* Espacement à droite des icônes */
+    color: #f4f5f7; /* Couleur des icônes */
+}
+
+/* Partie droite : Réseaux sociaux */
+.iit-right h3,
+.iit-right p {
+    font-size: 16px;
+    color: #f4f5f7;
+    margin: 5px 0;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.social-icons a {
+    color: #1283f5; /* Couleur des icônes */
+    margin: 0 10px; /* Espacement entre les icônes */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff; /* Changement de couleur au survol */
+    transform: scale(1.2); /* Agrandissement au survol */
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Séparation des blocs */
+    align-items: center;
+    flex-wrap: wrap; /* Passe à la ligne si nécessaire */
+    padding: 2rem 9%;
+    background-color: var(--second-bg-color);
+    gap: 2rem; /* Espacement entre les éléments */
+}
+
+.footer-text p {
+    font-size: 1rem;
+    color: #f4f5f7;
+    margin: 0;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background: var(--main-color);
+    border-radius: 0.8rem;
+    transition: 0.5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title-container {
+        flex-direction: column; /* Les éléments passent à la ligne */
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .logo-container img {
+        width: 120px; /* Taille réduite pour le logo */
+    }
+
+    .iit-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .iit-left p,
+    .iit-right p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .logo-container img {
+        width: 100px;
+    }
+
+    .iit-left p,
+    .iit-right p {
+        font-size: 12px;
+    }
+
+    .footer-text p {
+        font-size: 0.9rem;
+    }
+
+    .footer-iconTop a i {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+/* Media queries pour un design réactif */
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+        margin: 0; /* Supprime le margin-left */
+    }
+
+    section {
+        padding: 8rem 5%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 3rem 3%;
+    }
+}
+
