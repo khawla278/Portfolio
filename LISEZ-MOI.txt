@@ -1,0 +1,3 @@
+Ouvrir : double-clic sur index.html (garder tous les fichiers et dossiers ensemble).
+Modifier le contenu : script.js (projets, parcours, compétences). Le design : style.css.
+Mettre en ligne : glisser le dossier sur Netlify Drop, ou activer GitHub Pages.
